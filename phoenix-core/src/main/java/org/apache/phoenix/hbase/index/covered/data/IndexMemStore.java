@@ -311,12 +311,6 @@ public class IndexMemStore implements KeyValueStore {
     }
     
     @Override
-    public boolean shouldUseScanner(Scan scan, SortedSet<byte[]> columns, long oldestUnexpiredTS) {
-      throw new UnsupportedOperationException(this.getClass().getName()
-          + " doesn't support checking to see if it should use a scanner!");
-    }
-
-    @Override
     public boolean backwardSeek(Cell arg0) throws IOException {
         throw new UnsupportedOperationException();
     }
