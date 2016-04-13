@@ -201,7 +201,7 @@ public class ScanRegionObserver extends BaseScannerRegionObserver {
             dataRegion = IndexUtil.getDataRegion(c.getEnvironment());
             byte[] localIndexBytes = scan.getAttribute(LOCAL_INDEX_BUILD);
             List<IndexMaintainer> indexMaintainers = localIndexBytes == null ? null : IndexMaintainer.deserialize(localIndexBytes);
-            indexMaintainer = indexMaintainers.get(0);
+            indexMaintainer = indexMaintainers == null ? null: indexMaintainers.get(0);
             viewConstants = IndexUtil.deserializeViewConstantsFromScan(scan);
             byte[] txState = scan.getAttribute(BaseScannerRegionObserver.TX_STATE);
             tx = MutationState.decodeTransaction(txState);

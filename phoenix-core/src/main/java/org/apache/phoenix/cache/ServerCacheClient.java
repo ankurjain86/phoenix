@@ -206,7 +206,7 @@ public class ServerCacheClient {
                                                                             cacheUsingTable.isMultiTenant());
                                                             builder.setTenantId(ByteStringer.wrap(tenantIdBytes));
                                                         } catch (SQLException e) {
-                                                            new IOException(e);
+                                                            throw new IOException(e);
                                                         }
                                                     }
                                                     builder.setCacheId(ByteStringer.wrap(cacheId));
@@ -336,7 +336,7 @@ public class ServerCacheClient {
                                                         cacheUsingTable.isMultiTenant());
                                         builder.setTenantId(ByteStringer.wrap(tenantIdBytes));
                                     } catch (SQLException e) {
-                                        new IOException(e);
+                                        throw new IOException(e);
                                     }
     							}
     							builder.setCacheId(ByteStringer.wrap(cacheId));

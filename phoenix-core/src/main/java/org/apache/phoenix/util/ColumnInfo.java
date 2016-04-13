@@ -110,8 +110,8 @@ public class ColumnInfo {
         ColumnInfo that = (ColumnInfo) o;
 
         if (sqlType != that.sqlType) return false;
-        if (precision != that.precision) return false;
-        if (scale != that.scale) return false;
+        if (!precision.equals(that.precision)) return false;
+        if (!scale.equals(that.scale)) return false;
         if (!columnName.equals(that.columnName)) return false;
 
         return true;

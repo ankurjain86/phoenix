@@ -135,7 +135,7 @@ public class TupleProjectionCompiler {
                     position++, sourceColumn.isNullable(), sourceColumnRef);
             projectedColumns.add(column);
             // Wildcard or FamilyWildcard will be handled by ProjectionCompiler.
-            if (!isWildcard && !families.contains(sourceColumn.getFamilyName())) {
+            if (!isWildcard && !families.contains(sourceColumn.getFamilyName().getString())) {
                 context.getScan().addColumn(sourceColumn.getFamilyName().getBytes(), sourceColumn.getName().getBytes());
             }
         }
