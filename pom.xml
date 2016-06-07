@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.apache.phoenix</groupId>
   <artifactId>phoenix</artifactId>
-  <version>4.7.1-HBase-1.1-SNAPSHOT</version>
+  <version>4.7.1-HBase-1.2-cdh-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Apache Phoenix</name>
   <description>A SQL layer over HBase</description>
@@ -62,7 +62,31 @@
       <id>cloudera</id>
       <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
     </repository>
+    <repository>
+       <id>quadanalytix</id>
+       <name>Quad Analytix Maven Repository</name>
+       <url>https://quadanalytix.artifactoryonline.com/quadanalytix/repo</url>
+       <releases>
+            <enabled>true</enabled>
+       </releases>
+       <snapshots>
+            <enabled>true</enabled>
+       </snapshots>
+    </repository>
   </repositories>
+
+  <distributionManagement>
+    <repository>
+       <id>quadanalytix</id>
+       <name>libs-releases-local</name>
+       <url>https://quadanalytix.artifactoryonline.com/quadanalytix/libs-releases-local</url>
+    </repository>
+    <snapshotRepository>
+       <id>quadanalytix</id>
+       <name>libs-snapshots-local</name>
+       <url>https://quadanalytix.artifactoryonline.com/quadanalytix/libs-snapshots-local</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <parent>
     <groupId>org.apache</groupId>
@@ -116,7 +140,7 @@
     <joni.version>2.1.2</joni.version>
     <calcite.version>1.6.0</calcite.version>
     <jettyVersion>8.1.7.v20120910</jettyVersion>
-    <tephra.version>0.7.0</tephra.version>
+    <tephra.version>0.7.1-SNAPSHOT</tephra.version>
     <spark.version>1.5.2</spark.version>
     <scala.version>2.10.4</scala.version>
     <scala.binary.version>2.10</scala.binary.version>
@@ -683,7 +707,7 @@
       </dependency>
       <dependency>
         <groupId>co.cask.tephra</groupId>
-        <artifactId>tephra-hbase-compat-1.0-cdh</artifactId>
+        <artifactId>tephra-hbase-compat-1.2-cdh</artifactId>
         <version>${tephra.version}</version>
       </dependency>
 

@@ -45,7 +45,7 @@ import co.cask.tephra.TransactionConflictException;
 import co.cask.tephra.TransactionContext;
 import co.cask.tephra.TransactionFailureException;
 import co.cask.tephra.TransactionSystemClient;
-import co.cask.tephra.hbase10cdh.TransactionAwareHTable;
+import co.cask.tephra.hbase12cdh.TransactionAwareHTable;
 import co.cask.tephra.visibility.FenceWait;
 import co.cask.tephra.visibility.VisibilityFence;
 
